@@ -12,7 +12,7 @@ class Client(object) :
         return [field_name for field_name in [h.strip() for h in header] if len(field_name)]
 
     def _get_reader(self):
-        return csv.reader(open(self._file_path, "r"), delimiter=csvClient.CSV_DELIMITER)
+        return csv.reader(open(self._file_path, "rU"), delimiter=csvClient.CSV_DELIMITER)
 
     def get_rows(self):
         reader = self._get_reader()
